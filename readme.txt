@@ -55,4 +55,5 @@ http://grandslambert.com/support/forum.php?id=15
 http://grandslambert.com/support/forum.php?id=16
 
 == Screenshots ==
+
 1. The settings screen.
