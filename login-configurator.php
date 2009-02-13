@@ -47,19 +47,18 @@ class gsLoginConfigurator
 		if ( $this->logoLink = get_option('login_configurator_logo_link') );
 			add_filter('login_headerurl', array($this, 'get_logo_link'));
 	}
-
+	
 	/**
  	 * Action to add CSS to change the logo on the login pages.
 	 */
 	public function add_css()
 	{
 		?>
-		<style>
-			h1 a {background: url(<?php echo $this->logoURL; ?>) no-repeat center;}
-			.lc_form_text {margin-bottom: 10px;}
-		</style>
-		<?
-
+<style>
+h1 a {background: url(<?php echo $this->logoURL;?>) no-repeat center;}
+.lc_form_text {	margin-bottom: 10px;}
+</style>
+<?
 	}
 
 	/**
@@ -81,6 +80,7 @@ class gsLoginConfigurator
 			$option_array = array('login_configurator' => array('login_configurator_force', 'login_configurator_redirect_home', 'login_configurator_redirect_url', 'login_configurator_form_text', 'login_configurator_logo_url', 'login_configurator_logo_link'));
 			$whitelist = array_merge($whitelist, $option_array);
 		}
+
 		return $whitelist;
 	}
 
@@ -126,7 +126,7 @@ class gsLoginConfigurator
 			or ($this->force == 'posts' and is_single() == true )
 		) 
 		{
-			wp_redirect(wp_login_url($_SERVER['REQUEST_URI']));
+			wp_safe_redirect(wp_login_url($_SERVER['REQUEST_URI']));
 		}
 	}
 
@@ -146,7 +146,6 @@ class gsLoginConfigurator
 	{
 		global $wp_version;
 		$pageName = add_options_page("Login Configurator Options", "Login Configurator", 8, $this->optionsPageName, array(&$this, "outputOptionsSubpanel"));
-		add_action("admin_head-" . $pageName, array(&$this, "addAdminHeaderCode"), 12);
 
 		// Use the bundled jquery library if we are running WP 2.5 or above
 		if (version_compare($wp_version, "2.5", ">=")) {
@@ -160,15 +159,18 @@ class gsLoginConfigurator
 	function addConfigureLink($links, $file)
 	{
 		static $this_plugin;
+
 		if (!$this_plugin) 
 		{
 			$this_plugin = plugin_basename(__FILE__);
 		}
+
 		if ($file == $this_plugin) 
 		{
 			$settings_link = '<a href="options-general.php?page=' . $this->optionsPageName . '">' . __('Settings') . '</a>';
 			array_unshift($links, $settings_link);
 		}
+
 		return $links;
 	}
 }
@@ -176,4 +178,5 @@ class gsLoginConfigurator
 $GSLC = new gsLoginConfigurator;
 add_action('login_form', array($GSLC, 'lc_login_form'));
 add_action('wp_head', array($GSLC, 'lc_force_login'));
+
 ?>
