@@ -86,8 +86,8 @@ function onClickRedirectHome(element)
 
 	<h2>Credits</h2>
 	<p>Thank you for trying the Login Configurator plugin - I hope you find it useful.</p>
-	<p>If you have comments or suggestions, please feel free to share them on our <a href="http://www.grandslambert.com/support/login-configurator/comments" target="_blank">Comment Board</a>.</p>
-	<p>If you have any problems with this plugin, please use our <a href="http://www.grandslambert.com/support/login-configurator/support" target="_blank">Support Forum</a>.</p>
+	<p>If you have comments or suggestions, please feel free to share them on our <a href="http://grandslambert.com/support/forum.php?id=15" target="_blank">Comment Board</a>.</p>
+	<p>If you have any problems with this plugin, please use our <a href="http://grandslambert.com/support/forum.php?id=16" target="_blank">Support Forum</a>.</p>
 	<p>This plugin is &copy;2009 by <a href="http://www.grandslambert.com">GrandSlambert, Inc.</a> and is released under the <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GNU General Public License</a>.</p>
 	<h2>Donate</h2>
 	<p>If you would like to donate to the support of this plugin and the development of future plugins, please visit our <a href="http://www.grandslambert.com/contribute" target="_blank">contribution page</a>.</p>

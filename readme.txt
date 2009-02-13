@@ -6,7 +6,7 @@ Requires at least: 2.7
 Tested up to: 2.7.1
 Stable tag: trunk
 
-Change the way your login functions work including forcing users to log in, changing the URL they go to when the login is successful, adding text to the login form, and change the logo and link on the login form.
+Add features to control how your login form works including where the user is redirected when they log in.
 
 == Description ==
 
@@ -30,4 +30,8 @@ Features include:
 
 = Where can I leave feedback? =
 
-http://www.grandslambert.com/support/WHERE IS THE SUPPORT FORUM?
+http://grandslambert.com/support/forum.php?id=15
+
+= Where can I get support? =
+
+http://grandslambert.com/support/forum.php?id=16
