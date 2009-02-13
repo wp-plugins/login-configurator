@@ -26,6 +26,16 @@ Features include:
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Configure the plugin on the Settings->Login Configurator screen.
 
+
+== Other Notes ==
+
+= Changelog =
+
+0.0.6 - Minor Fix
+* This minor fix removes some errors in the settings screen and fixes the headers already sent in some themes.
+
+0.0.5
+* Early alpha release
 == Frequently Asked Questions ==
 
 = Why do I need this plugin? =
