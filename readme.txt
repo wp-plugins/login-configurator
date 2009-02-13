@@ -53,3 +53,6 @@ http://grandslambert.com/support/forum.php?id=15
 = Where can I get support? =
 
 http://grandslambert.com/support/forum.php?id=16
+
+== Screenshots ==
+1. The settings screen.
