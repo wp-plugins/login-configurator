@@ -1,7 +1,7 @@
 === Login Configurator ===
 Contributors: GrandSlambert
 Donate link: http://www.grandslambert.com/contribute/
-Tags: login
+Tags: login, login redirect, customize login, login notes
 Requires at least: 2.7
 Tested up to: 2.7.1
 Stable tag: trunk
@@ -32,10 +32,13 @@ Features include:
 = Changelog =
 
 0.0.6 - Minor Fix
+
 * This minor fix removes some errors in the settings screen and fixes the headers already sent in some themes.
 
 0.0.5
+
 * Early alpha release
+
 == Frequently Asked Questions ==
 
 = Why do I need this plugin? =
