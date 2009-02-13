@@ -1,0 +1,33 @@
+=== Login Configurator ===
+Contributors: GrandSlambert
+Donate link: http://www.grandslambert.com/contribute/
+Tags: login
+Requires at least: 2.7
+Tested up to: 2.7.1
+Stable tag: trunk
+
+Change the way your login functions work including forcing users to log in, changing the URL they go to when the login is successful, adding text to the login form, and change the logo and link on the login form.
+
+== Description ==
+
+Change the way your login functions work including forcing users to log in, changing the URL they go to when the login is successful, adding text to the login form, and change the logo and link on the login form.
+
+Features include:
+
+* Force users to log in to the site.
+* Set a default redirect URL when they log in.
+* Add a message to the login form.
+* Set the URL for a new logo for all login pages.
+* Set the URL for the link on the logo for all login pages.
+
+== Installation ==
+
+1. Upload `login-configurator` folder to the `/wp-content/plugins/` directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Configure the plugin on the Settings->Login Configurator screen.
+
+== Frequently Asked Questions ==
+
+= Where can I leave feedback? =
+
+http://www.grandslambert.com/support/WHERE IS THE SUPPORT FORUM?
