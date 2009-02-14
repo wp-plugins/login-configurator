@@ -130,7 +130,7 @@ h1 a {background: url(<?php echo $this->logoURL;?>) no-repeat center;}
 				wp_safe_redirect(wp_login_url($_SERVER['REQUEST_URI']));
 			else
 			{
-				$url = get_option('siteurl').'/wp-login.php&redirect_to=' . $_SERVER['REQUEST_URI'];
+				$url = get_option('siteurl').'/wp-login.php?redirect_to=' . $_SERVER['REQUEST_URI'];
 				wp_safe_redirect($url);
 			}
 		}
