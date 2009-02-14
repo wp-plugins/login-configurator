@@ -3,29 +3,29 @@
 Plugin Name: Login Configurator
 Plugin URI: http://www.grandslambert.com/wordpress/login-configurator
 Description: Change the way your login functions work including forcing users to log in, changing the URL they go to when the login is successful, adding text to the login form, and change the logo and link on the login form.
-Version: 0.0.6
+Version: 0.6.1
 Author: GrandSlambert
 Author URI: http://www.grandslambert.com/
 */
 
 class gsLoginConfigurator
 {
-	public $force = false;
-	public $redirectHome = false;
-	public $redirectURL;
-	public $loginURL;
-	public $loginFormText;
-	public $logoURL;
-	public $logoLink;
+	var $force = false;
+	var $redirectHome = false;
+	var $redirectURL;
+	var $loginURL;
+	var $loginFormText;
+	var $logoURL;
+	var $logoLink;
 
 	// Options page name
-	public $optionsName = "login_configurator_options";
-	public $optionsPageName = "login_configurator-options";
+	var $optionsName = "login_configurator_options";
+	var $optionsPageName = "login_configurator-options";
 
 	/**
 	 * Plugin Constructor. Adds actions and filters
 	 */
-	public function gsLoginConfigurator()
+	function gsLoginConfigurator()
 	{
 		$this->pluginPath = WP_CONTENT_DIR . "/plugins/" . plugin_basename(dirname(__FILE__));
 		
@@ -51,7 +51,7 @@ class gsLoginConfigurator
 	/**
  	 * Action to add CSS to change the logo on the login pages.
 	 */
-	public function add_css()
+	function add_css()
 	{
 		?>
 <style>
@@ -64,7 +64,7 @@ h1 a {background: url(<?php echo $this->logoURL;?>) no-repeat center;}
 	/**
 	 * Filter to change the link for the logo on the login page
 	 */
-	public function get_logo_link()
+	function get_logo_link()
 	{
 		return $this->logoLink;
 	}
@@ -73,7 +73,7 @@ h1 a {background: url(<?php echo $this->logoURL;?>) no-repeat center;}
 	 * Add all options to the whitelist for the NONCE
 	 * Required for Wordpress MU support
 	 */
-	public function whitelistOptions($whitelist)
+	function whitelistOptions($whitelist)
 	{
 		if (is_array($whitelist))
 		{
@@ -126,7 +126,13 @@ h1 a {background: url(<?php echo $this->logoURL;?>) no-repeat center;}
 			or ($this->force == 'posts' and is_single() == true )
 		) 
 		{
-			wp_safe_redirect(wp_login_url($_SERVER['REQUEST_URI']));
+			if (function_exists(wp_login_url))
+				wp_safe_redirect(wp_login_url($_SERVER['REQUEST_URI']));
+			else
+			{
+				$url = get_option('siteurl').'/wp-login.php&redirect_to=' . $_SERVER['REQUEST_URI'];
+				wp_safe_redirect($url);
+			}
 		}
 	}
 
@@ -174,6 +180,10 @@ h1 a {background: url(<?php echo $this->logoURL;?>) no-repeat center;}
 		return $links;
 	}
 }
+
+// Pre 2.6 Compatibility
+if ( !defined('WP_CONTENT_DIR') )
+	define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
 
 $GSLC = new gsLoginConfigurator;
 add_action('login_form', array($GSLC, 'lc_login_form'));

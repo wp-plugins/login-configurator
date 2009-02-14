@@ -2,8 +2,8 @@
 Contributors: GrandSlambert
 Donate link: http://www.grandslambert.com/contribute/
 Tags: login, login redirect, customize login, login notes
-Requires at least: 2.7
-Tested up to: 2.7.1
+Requires at least: 2.5
+Tested up to: 2.8-bleeding-edge
 Stable tag: trunk
 
 Add features to control how your login form works including where the user is redirected when they log in.
@@ -31,11 +31,16 @@ Features include:
 
 = Changelog =
 
-0.0.6 - Minor Fix
+06.1
+
+* Fixing the plugin to work with PHP 4 - was originally only compatible with PHP5
+* Changing the version numbering system to better match the version.
+
+0.6.0 - Minor Fix
 
 * This minor fix removes some errors in the settings screen and fixes the headers already sent in some themes.
 
-0.0.5
+0.5.0
 
 * Early alpha release
 
