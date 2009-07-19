@@ -15,10 +15,12 @@ Change the way your login functions work including forcing users to log in, chan
 Features include:
 
 * Force users to log in to the site.
+* Can also protect your feed URL.
 * Set a default redirect URL when they log in.
 * Add a message to the login form.
 * Set the URL for a new logo for all login pages.
 * Set the URL for the link on the logo for all login pages.
+* Whitelist certain URLs in the site to remain unprotected.
 
 == Installation ==
 
