@@ -43,8 +43,22 @@ function onClickRedirectHome(element)
           <?php _e('<strong>TEASER</strong> - Allow non logged in users to see the home page, but force login on all other pages.'); ?></label>
           <br>
           <label>
-          <input type="radio" id="login_configurator_force_inside" name="login_configurator_force" value="posts" <?php echo ($this->force == 'posts') ? 'checked' : ''; ?> />
+          <input type="radio" id="login_configurator_force_posts" name="login_configurator_force" value="posts" <?php echo ($this->force == 'posts') ? 'checked' : ''; ?> />
           <?php _e('<strong>POSTS</strong> - Only force login when a user wants to see a full post.'); ?></label>        </td>
+      </tr>
+      <tr align="top">
+        <th scope="row"><?php _e('Ignore the feed URL?'); ?></th>
+        <td><label>
+          <input type="radio" id="login_configurator_feed_no" name="login_configurator_feed" value="protected" <?php echo ($this->feed == 'protected') ? 'checked' : ''; ?> />
+          <?php _e('<strong>Protected</strong> - Protect the feed URL as well.'); ?>
+          </label>
+            <br />
+            <label>
+            <input type="radio" id="login_configurator_feed_yes" name="login_configurator_feed" value="ignore" <?php echo ($this->feed == 'ignore') ? 'checked' : ''; ?> />
+            <?php _e('<strong>Ignore</strong> - Do not proted the feed URL on this blog.'); ?>
+          </label>
+            <br />
+            <label></label></td>
       </tr>
       <tr align="top">
         <th scope="row"><?php _e('Redirect URL'); ?></th>
@@ -70,14 +84,19 @@ function onClickRedirectHome(element)
           <br>
           <?php _e('Leave blank to use the default Wordpress site.'); ?></td>
       </tr>
+      <tr align="top">
+        <th scope="row"><?php _e('URLs to ignore (Whitelist)'); ?></th>
+        <td><textarea id="login_configurator_whitelistURLs" name="login_configurator_whitelistURLs" style="width:500px; height:150px;"><?php echo $this->whitelistURLs; ?></textarea>
+          <br />
+          <?php _e('List of URLs that are unprotected by this plugin. List each URL on a separate line. '); ?>
+        </td>
+      </tr>
     </table>
     <input type="hidden" name="action" value="update" />
-    <?php
-
-		if (function_exists('wpmu_create_blog')) : ?>
+    <?php if (function_exists('wpmu_create_blog')) : ?>
     <input type="hidden" name="option_page" value="login_configurator" />
     <?php  else : ?>
-    <input type="hidden" name="page_options" value="login_configurator_force,login_configurator_redirect_home,login_configurator_redirect_url,login_configurator_form_text,login_configurator_logo_url,login_configurator_logo_link" />
+    <input type="hidden" name="page_options" value="login_configurator_force,login_configurator_feed,login_configurator_redirect_home,login_configurator_redirect_url,login_configurator_form_text,login_configurator_logo_url,login_configurator_logo_link,login_configurator_whitelistURLs" />
     <?php endif;
 
 	?>
@@ -86,11 +105,10 @@ function onClickRedirectHome(element)
     </p>
   </form>
   <h2>Credits</h2>
-  <p>Thank you for trying the Login Configurator plugin - I hope you find it useful.</p>
-  <p>If you have comments or suggestions, please feel free to share them on our <a href="http://grandslambert.com/support/forum.php?id=15" target="_blank">Comment Board</a>.</p>
-  <p>If you have any problems with this plugin, please use our <a href="http://grandslambert.com/support/forum.php?id=16" target="_blank">Support Forum</a>.</p>
-  <p>This plugin is &copy;2009 by <a href="http://www.grandslambert.com" target="_blank">GrandSlambert, Inc.</a> and is released under the <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GNU General Public License</a>.</p>
+  <p>Thank you for trying the Login Configurator plugin - I hope you find it useful. For the latest updates on this plugin, visit the <a href="http://wordpress.grandslambert.com/plugins/login-configurator.html" target="_blank">official site</a>.</p>
+  <p>If you have any problems with this plugin, please use our <a href="http://support.grandslambert.com/forum/login-configurator" target="_blank">Support Forum</a>.</p>
+  <p>This plugin is &copy;2009 by <a href="http://grandslambert.com" target="_blank">GrandSlambert, Inc.</a> and is released under the <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GNU General Public License</a>.</p>
   <h2>Donate</h2>
-  <p>If you would like to donate to the support of this plugin and the development of future plugins, please visit our <a href="http://www.grandslambert.com/contribute" target="_blank">contribution page</a>.</p>
+  <p>If you would like to donate to the support of this plugin and the development of future plugins, please visit our <a href="http://wordpress.grandslambert.com/contact/donate.html" target="_blank">donate page</a>.</p>
   <p>We gladly accept cash or gift cards or even just a good pat on the back!</p>
 </div>

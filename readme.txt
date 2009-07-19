@@ -1,9 +1,9 @@
 === Login Configurator ===
 Contributors: GrandSlambert
-Donate link: http://www.grandslambert.com/contribute/
+Donate link: http://wordpress.grandslambert.com/contact/donate.html
 Tags: login, login redirect, customize login, login notes
 Requires at least: 2.5
-Tested up to: 2.8-bleeding-edge
+Tested up to: 2.8.1
 Stable tag: trunk
 
 Add features to control how your login form works including where the user is redirected when they log in.
@@ -31,7 +31,12 @@ Features include:
 
 = Changelog =
 
-06.1
+1.0
+
+* Added an option to choose whether or not to protect the feed URL.
+* Added a whitelist feature to prevent plugin from affecting certain URLs
+
+0.6.1
 
 * Fixing the plugin to work with PHP 4 - was originally only compatible with PHP5
 * Changing the version numbering system to better match the version.
@@ -54,13 +59,9 @@ If you want to protect your blogg, or parts of your blog, behind a login, you ne
 
 If you want to change the logo on your blog's login pages, you need this plugin.
 
-= Where can I leave feedback? =
-
-http://grandslambert.com/support/forum.php?id=15
-
 = Where can I get support? =
 
-http://grandslambert.com/support/forum.php?id=16
+http://support.grandslambert.com/forum/login-configurator
 
 == Screenshots ==
 

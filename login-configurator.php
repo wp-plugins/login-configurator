@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Login Configurator
-Plugin URI: http://www.grandslambert.com/wordpress/login-configurator
+Plugin URI: http://wordpress.grandslambert.com/plugins/login-configurator
 Description: Change the way your login functions work including forcing users to log in, changing the URL they go to when the login is successful, adding text to the login form, and change the logo and link on the login form.
-Version: 0.6.1
+Version: 1.0
 Author: GrandSlambert
 Author URI: http://www.grandslambert.com/
 */
@@ -11,12 +11,14 @@ Author URI: http://www.grandslambert.com/
 class gsLoginConfigurator
 {
 	var $force = false;
+	var $feed = 'ignore';
 	var $redirectHome = false;
 	var $redirectURL;
 	var $loginURL;
 	var $loginFormText;
 	var $logoURL;
 	var $logoLink;
+	var $whitelistURLs;
 
 	// Options page name
 	var $optionsName = "login_configurator_options";
@@ -31,9 +33,12 @@ class gsLoginConfigurator
 		
 		// Get Options
 		$this->force = get_option('login_configurator_force');
+		if ( get_option('login_configurator_feed') )
+			$this->feed = get_option('login_configurator_feed');
 		$this->redirectHome = get_option('login_configurator_redirect_home');
 		$this->redirectURL = get_option('login_configurator_redirect_url');
 		$this->loginURL = get_option('login_configurator_login_url');
+		$this->whitelistURLs = get_option('login_configurator_whitelistURLs');
 
 		// Add Options Pages and Links
 		add_action('admin_menu', array(&$this, "addAdminPages"));
@@ -77,7 +82,16 @@ h1 a {background: url(<?php echo $this->logoURL;?>) no-repeat center;}
 	{
 		if (is_array($whitelist))
 		{
-			$option_array = array('login_configurator' => array('login_configurator_force', 'login_configurator_redirect_home', 'login_configurator_redirect_url', 'login_configurator_form_text', 'login_configurator_logo_url', 'login_configurator_logo_link'));
+			$option_array = array('login_configurator' => array(
+				'login_configurator_force',
+				'login_configurator_feed',
+				'login_configurator_redirect_home', 
+				'login_configurator_redirect_url', 
+				'login_configurator_form_text', 
+				'login_configurator_logo_url', 
+				'login_configurator_logo_link',
+				'login_configurator_whitelistURLs')
+			);
 			$whitelist = array_merge($whitelist, $option_array);
 		}
 
@@ -118,12 +132,34 @@ h1 a {background: url(<?php echo $this->logoURL;?>) no-repeat center;}
 		{
 			return;
 		}
-
+		
+		/*
+		Check if we should protected the feed
+		*/
+		if ( is_feed() and $this->feed != 'protected' )
+		{
+			return;
+		}
+		
+		/*
+		Build the URL whitelist array
+		*/
+		$whitelisturls = array();
+		$siteURL = get_option('siteurl');
+		foreach (explode("\n",$this->whitelistURLs) as $url)
+		{
+			$url = eregi_replace($siteURL, '', $url);
+			array_push($whitelisturls, $url);
+		}
+					
 		// Redirect to login based on the rules set in the admin
 		if (
-			$this->force == 'all' 
-			or ($this->force == 'inside' and is_home() == false )
-			or ($this->force == 'posts' and is_single() == true )
+			(
+				$this->force == 'all' 
+				or ($this->force == 'inside' and is_home() == false )
+				or ($this->force == 'posts' and is_single() == true )
+			)
+			and ( false == in_array($_SERVER['REQUEST_URI'], $whitelisturls) )
 		) 
 		{
 			if (function_exists(wp_login_url))
