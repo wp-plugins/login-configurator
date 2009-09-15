@@ -3,7 +3,7 @@
 Plugin Name: Login Configurator
 Plugin URI: http://wordpress.grandslambert.com/plugins/login-configurator
 Description: Change the way your login functions work including forcing users to log in, changing the URL they go to when the login is successful, adding text to the login form, and change the logo and link on the login form.
-Version: 1.0
+Version: 1.1
 Author: GrandSlambert
 Author URI: http://www.grandslambert.com/
 */
@@ -63,7 +63,7 @@ class gsLoginConfigurator
 h1 a {background: url(<?php echo $this->logoURL;?>) no-repeat center;}
 .lc_form_text {	margin-bottom: 10px;}
 </style>
-<?
+<?php
 	}
 
 	/**
