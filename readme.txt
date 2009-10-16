@@ -65,7 +65,7 @@ Features include:
 
 If you have ever wanted to control how your login page looks and works, you need this plugin.
 
-If you want to protect your blogg, or parts of your blog, behind a login, you need this plugin.
+If you want to protect your blog, or parts of your blog, behind a login, you need this plugin.
 
 If you want to change the logo on your blog's login pages, you need this plugin.
 
