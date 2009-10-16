@@ -33,6 +33,10 @@ Features include:
 
 = Changelog =
 
+1.2
+
+* Fixed an issue with the last whitelist URL not being recognized properly.
+
 1.1
 
 * Fixed a small bug that broke installation on some versions of PHP.

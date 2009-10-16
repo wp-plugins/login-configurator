@@ -3,13 +3,14 @@
 Plugin Name: Login Configurator
 Plugin URI: http://wordpress.grandslambert.com/plugins/login-configurator
 Description: Change the way your login functions work including forcing users to log in, changing the URL they go to when the login is successful, adding text to the login form, and change the logo and link on the login form.
-Version: 1.1
+Version: 1.2
 Author: GrandSlambert
 Author URI: http://www.grandslambert.com/
 */
 
 class gsLoginConfigurator
 {
+	var $version = '1.2';
 	var $force = false;
 	var $feed = 'ignore';
 	var $redirectHome = false;
@@ -30,6 +31,7 @@ class gsLoginConfigurator
 	function gsLoginConfigurator()
 	{
 		$this->pluginPath = WP_CONTENT_DIR . "/plugins/" . plugin_basename(dirname(__FILE__));
+		$this->pluginDir = '/wp-content/plugins/' . plugin_basename(dirname(__FILE__));
 		
 		// Get Options
 		$this->force = get_option('login_configurator_force');
@@ -42,6 +44,7 @@ class gsLoginConfigurator
 
 		// Add Options Pages and Links
 		add_action('admin_menu', array(&$this, "addAdminPages"));
+		add_action('admin_head', array($this, 'adminHeader') );
 		add_filter('plugin_action_links', array(&$this, "addConfigureLink"), 10, 2);
 		add_filter('whitelist_options', array(&$this, 'whitelistOptions'));
 
@@ -64,6 +67,15 @@ h1 a {background: url(<?php echo $this->logoURL;?>) no-repeat center;}
 .lc_form_text {	margin-bottom: 10px;}
 </style>
 <?php
+	}
+
+	/**
+	 * Admin Header Stuff
+	 */
+	function adminHeader()
+	{
+		print '<script type="text/javascript" src="' . $this->pluginDir . '/scripts.js"></script>' . "\n";
+
 	}
 
 	/**
@@ -146,7 +158,9 @@ h1 a {background: url(<?php echo $this->logoURL;?>) no-repeat center;}
 		*/
 		$whitelisturls = array();
 		$siteURL = get_option('siteurl');
-		foreach (explode("\n",$this->whitelistURLs) as $url)
+		$urls = explode("\n",$this->whitelistURLs);
+
+		foreach ($urls as $url)
 		{
 			$url = eregi_replace($siteURL, '', $url);
 			array_push($whitelisturls, $url);
@@ -214,6 +228,14 @@ h1 a {background: url(<?php echo $this->logoURL;?>) no-repeat center;}
 		}
 
 		return $links;
+	}
+
+	/**
+	 * Show the version number
+	 */
+	function showVersion()
+	{
+		return $this->version;
 	}
 }
 
