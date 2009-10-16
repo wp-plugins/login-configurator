@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Login Configurator
-Plugin URI: http://wordpress.grandslambert.com/plugins/login-configurator
+Plugin URI: http://wordpress.grandslambert.com/plugins/login-configurator.html
 Description: Change the way your login functions work including forcing users to log in, changing the URL they go to when the login is successful, adding text to the login form, and change the logo and link on the login form.
 Version: 1.2
 Author: GrandSlambert
