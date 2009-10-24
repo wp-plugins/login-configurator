@@ -28,10 +28,7 @@ Features include:
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Configure the plugin on the Settings->Login Configurator screen.
 
-
-== Other Notes ==
-
-= Changelog =
+== Changelog ==
 
 1.2
 
