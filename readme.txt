@@ -1,6 +1,6 @@
 === Login Configurator ===
 Contributors: GrandSlambert
-Donate link: http://wordpress.grandslambert.com/contact/donate.html
+Donate link: http://wordpress.grandslambert.com/plugins/login-configurator/donate.html
 Tags: login, login redirect, customize login, login notes
 Requires at least: 2.5
 Tested up to: 2.8.4
