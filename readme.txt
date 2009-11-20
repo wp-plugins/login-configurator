@@ -3,7 +3,7 @@ Contributors: GrandSlambert
 Donate link: http://wordpress.grandslambert.com/plugins/login-configurator/donate.html
 Tags: login, login redirect, customize login, login notes
 Requires at least: 2.5
-Tested up to: 2.8.4
+Tested up to: 2.9
 Stable tag: trunk
 
 Add features to control how your login form works including where the user is redirected when they log in.
