@@ -30,6 +30,10 @@ Features include:
 
 == Changelog ==
 
+1.3
+
+* Fixed an issue where "Teaser" option does not work with a static home page.
+
 1.2
 
 * Fixed an issue with the last whitelist URL not being recognized properly.

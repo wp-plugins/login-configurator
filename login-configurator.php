@@ -3,14 +3,14 @@
 Plugin Name: Login Configurator
 Plugin URI: http://wordpress.grandslambert.com/plugins/login-configurator.html
 Description: Change the way your login functions work including forcing users to log in, changing the URL they go to when the login is successful, adding text to the login form, and change the logo and link on the login form.
-Version: 1.2
+Version: 1.3
 Author: GrandSlambert
 Author URI: http://www.grandslambert.com/
 */
 
 class gsLoginConfigurator
 {
-	var $version = '1.2';
+	var $version = '1.3';
 	var $force = false;
 	var $feed = 'ignore';
 	var $redirectHome = false;
@@ -170,7 +170,7 @@ h1 a {background: url(<?php echo $this->logoURL;?>) no-repeat center;}
 		if (
 			(
 				$this->force == 'all' 
-				or ($this->force == 'inside' and is_home() == false )
+				or ($this->force == 'inside' and is_front_page() == false )
 				or ($this->force == 'posts' and is_single() == true )
 			)
 			and ( false == in_array($_SERVER['REQUEST_URI'], $whitelisturls) )
