@@ -30,6 +30,11 @@ Features include:
 
 == Changelog ==
 
+1.5 - December 18th, 2009
+
+* Cleaned up some code causing errors in HTML code.
+* Fixed an issue with CSS properties on the login page.
+
 1.4 - December 17th, 2009
 
 * Fixed an issue where the plugin failed on Wordpress MU.
@@ -70,6 +75,9 @@ Features include:
 * Early alpha release
 
 == Upgrade Notice ==
+
+= 1.5 =
+Not required, just some code cleanup and text changes.
 
 = 1.4 =
 Required update for latest version of Wordpress MU.

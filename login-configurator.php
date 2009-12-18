@@ -3,7 +3,7 @@
 Plugin Name: Login Configurator
 Plugin URI: http://wordpress.grandslambert.com/plugins/login-configurator.html
 Description: Change the way your login functions work including forcing users to log in, changing the URL they go to when the login is successful, adding text to the login form, and change the logo and link on the login form.
-Version: 1.4
+Version: 1.5
 Author: GrandSlambert
 Author URI: http://www.grandslambert.com/
 
@@ -30,11 +30,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 class gsLoginConfigurator {
-    var $version = '1.4';
+    var $version = '1.5';
 
     /* Plugin Settings */
     var $optionsName = "login_configurator_options";
     var $menuName = "login-configurator-options";
+    var $pluginName = 'Login Configurator';
     var $options = array();
 
     /**
@@ -43,7 +44,7 @@ class gsLoginConfigurator {
     function gsLoginConfigurator() {
         $this->pluginPath = WP_CONTENT_DIR . "/plugins/" . plugin_basename(dirname(__FILE__));
         $this->pluginDir = get_option('siteurl') . '/wp-content/plugins/' . plugin_basename(dirname(__FILE__));
-        $this->options = get_option('login_configurator_options');
+        $this->options = get_option($this->optionsName);
 
         if(!$this->options['force']) {
             $this->options['force'] = 'off';
@@ -76,7 +77,7 @@ class gsLoginConfigurator {
      * Action to add CSS to change the logo on the login pages.
      */
     function add_css() {
-        print "<style>\n /* Styles added by Login Configurator Plugin */\n";
+        print "<style>\n /* Styles added by " . $this->pluginName . " Plugin */\n";
 
         if ($this->options['logo_url']) : ?>
 h1 a {background: url(<?php echo $this->options['logo_url'];?>) no-repeat center;}
@@ -209,7 +210,7 @@ h1 a {background: url(<?php echo $this->options['logo_url'];?>) no-repeat center
      */
     function addAdminPages() {
         global $wp_version;
-        $pageName = add_options_page("Login Configurator Options", "Login Configurator", 8, $this->menuName, array(&$this, "outputOptionsSubpanel"));
+        $pageName = add_options_page($this->pluginName . ' Options', $this->pluginName, 8, $this->menuName, array(&$this, "outputOptionsSubpanel"));
 
         // Use the bundled jquery library if we are running WP 2.5 or above
         if (version_compare($wp_version, "2.5", ">=")) {
@@ -228,7 +229,7 @@ h1 a {background: url(<?php echo $this->options['logo_url'];?>) no-repeat center
         }
 
         if ($file == $this_plugin) {
-            $settings_link = '<a href="options-general.php?page=' . $this->menuName . '">' . __('Settings') . '</a>';
+            $settings_link = '<a href="' . get_option('siteurl') . '/wp-admin/options-general.php?page=' . $this->menuName . '">' . __('Settings') . '</a>';
             array_unshift($links, $settings_link);
         }
 

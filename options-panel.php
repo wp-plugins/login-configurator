@@ -1,5 +1,5 @@
 <div class="wrap">
-    <h2>Login Configurator &raquo; Options</h2>
+    <h2><?php print $this->pluginName; ?> &raquo; Options</h2>
     <form method="post" action="options.php">
         <?php settings_fields($this->optionsName); ?>
         <input id="home_page_url" value="<?php print get_option('siteurl'); ?>" type="hidden" />
@@ -126,7 +126,7 @@
             </h3>
             <div style="padding:5px;">
                 <p>This page allows you to configure the settings for this plugin. See the Usage section below for information about the different options.</p>
-                <p><span>You are using <strong> <a href="http://wordpress.grandslambert.com/plugins/login-configurator.html" target="_blank">Login Configurator <?php print $this->showVersion(); ?></a></strong> by <a href="http://grandslambert.com" target="_blank">GrandSlambert</a>.</span> </p>
+                <p><span>You are using <strong> <a href="http://wordpress.grandslambert.com/plugins/login-configurator.html" target="_blank"><?php print $this->pluginName; ?> <?php print $this->showVersion(); ?></a></strong> by <a href="http://grandslambert.com" target="_blank">GrandSlambert</a>.</span> </p>
             </div>
         </div>
         <div class="postbox">
@@ -143,7 +143,7 @@
                 <?php _e('Credits'); ?>
             </h3>
             <div style="padding:8px;">
-                <p>Thank you for trying the Login Configurator plugin - I hope you find it useful. For the latest updates on this plugin, visit the <a href="http://wordpress.grandslambert.com/plugins/login-configurator.html" target="_blank">official site</a>. If you have any problems with this plugin, please use our <a href="http://support.grandslambert.com/forum/login-configurator" target="_blank">Support Forum</a>.</p>
+                <p>Thank you for trying the <?php print $this->pluginName; ?> plugin - I hope you find it useful. For the latest updates on this plugin, visit the <a href="http://wordpress.grandslambert.com/plugins/login-configurator.html" target="_blank">official site</a>. If you have any problems with this plugin, please use our <a href="http://support.grandslambert.com/forum/login-configurator" target="_blank">Support Forum</a>.</p>
                 <p>This plugin is &copy;2009 by <a href="http://grandslambert.com" target="_blank">GrandSlambert, Inc.</a> and is released under the <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GNU General Public License</a>.</p>
             </div>
         </div>
