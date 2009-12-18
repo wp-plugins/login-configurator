@@ -3,7 +3,7 @@
 function onClickRedirectHome(element)
 {
 	var field = document.getElementById('login_configurator_redirect_url');
-	var url = "<?php echo get_option('siteurl'); ?>";
+	var url = document.getElementById('home_page_url').value;
 
 	if (element.checked)
 	{

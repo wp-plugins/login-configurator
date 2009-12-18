@@ -17,7 +17,7 @@ Features include:
 * Force users to log in to the site.
 * Can also protect your feed URL.
 * Set a default redirect URL when they log in.
-* Add a message to the login form.
+* Add a message box with title to the login form.
 * Set the URL for a new logo for all login pages.
 * Set the URL for the link on the logo for all login pages.
 * Whitelist certain URLs in the site to remain unprotected.
@@ -30,35 +30,49 @@ Features include:
 
 == Changelog ==
 
-1.3
+1.4 - December 17th, 2009
+
+* Fixed an issue where the plugin failed on Wordpress MU.
+* Fixed an issue where the logo link setting did not work.
+* Fixed a bug in whitelist URLs to use all URLs entered. URLs should be entered starting with the first / after the domain name.
+* Added a title field to add to the login form.
+* Added styles for the title and text forms.
+* Now saves all option data in one option record, converts 1.3 and previous settings on activation.
+
+1.3 - November 20th, 2009
 
 * Fixed an issue where "Teaser" option does not work with a static home page.
 
-1.2
+1.2 - October 16th, 2009
 
 * Fixed an issue with the last whitelist URL not being recognized properly.
 
-1.1
+1.1 - September 15th, 2009
 
 * Fixed a small bug that broke installation on some versions of PHP.
 
-1.0
+1.0 - July 19th, 2009
 
 * Added an option to choose whether or not to protect the feed URL.
 * Added a whitelist feature to prevent plugin from affecting certain URLs
 
-0.6.1
+0.6.1 - February 14th, 2009
 
 * Fixing the plugin to work with PHP 4 - was originally only compatible with PHP5
 * Changing the version numbering system to better match the version.
 
-0.6.0 - Minor Fix
+0.6.0 - February 13th, 2009
 
 * This minor fix removes some errors in the settings screen and fixes the headers already sent in some themes.
 
-0.5.0
+0.5.0 - February 13th, 2009
 
 * Early alpha release
+
+== Upgrade Notice ==
+
+= 1.4 =
+Required update for latest version of Wordpress MU.
 
 == Frequently Asked Questions ==
 
