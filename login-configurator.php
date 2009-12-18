@@ -228,7 +228,7 @@ h1 a {background: url(<?php echo $this->options['logo_url'];?>) no-repeat center
         }
 
         if ($file == $this_plugin) {
-            $settings_link = '<a href="options-general.php?page=' . $this->optionsPageName . '">' . __('Settings') . '</a>';
+            $settings_link = '<a href="options-general.php?page=' . $this->menuName . '">' . __('Settings') . '</a>';
             array_unshift($links, $settings_link);
         }
 
