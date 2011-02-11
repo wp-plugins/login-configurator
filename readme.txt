@@ -1,6 +1,6 @@
 === Login Configurator ===
 Contributors: GrandSlambert
-Donate link: http://wordpress.grandslambert.com/plugins/login-configurator/donate.html
+Donate link: http://plugins.grandslambert.com/login-configurator-donate
 Tags: login, login redirect, customize login, login notes
 Requires at least: 2.5
 Tested up to: 2.9
@@ -30,12 +30,19 @@ Features include:
 
 == Changelog ==
 
-1.5 - December 18th, 2009
+= 1.6 - Feburary 11th, 2011 =
+
+* Fixed the loading of the stylesheets and javascript.
+* Fixed a bug in the whitelist URL code that did not work with all URLs.
+* Cleaned up the code to reduce load.
+* Added language file and support for translations.
+
+= 1.5 - December 18th, 2009 =
 
 * Cleaned up some code causing errors in HTML code.
 * Fixed an issue with CSS properties on the login page.
 
-1.4 - December 17th, 2009
+= 1.4 - December 17th, 2009 =
 
 * Fixed an issue where the plugin failed on Wordpress MU.
 * Fixed an issue where the logo link setting did not work.
@@ -44,37 +51,40 @@ Features include:
 * Added styles for the title and text forms.
 * Now saves all option data in one option record, converts 1.3 and previous settings on activation.
 
-1.3 - November 20th, 2009
+= 1.3 - November 20th, 2009 =
 
 * Fixed an issue where "Teaser" option does not work with a static home page.
 
-1.2 - October 16th, 2009
+= 1.2 - October 16th, 2009 =
 
 * Fixed an issue with the last whitelist URL not being recognized properly.
 
-1.1 - September 15th, 2009
+= 1.1 - September 15th, 2009 =
 
 * Fixed a small bug that broke installation on some versions of PHP.
 
-1.0 - July 19th, 2009
+= 1.0 - July 19th, 2009 =
 
 * Added an option to choose whether or not to protect the feed URL.
 * Added a whitelist feature to prevent plugin from affecting certain URLs
 
-0.6.1 - February 14th, 2009
+= 0.6.1 - February 14th, 2009 =
 
 * Fixing the plugin to work with PHP 4 - was originally only compatible with PHP5
 * Changing the version numbering system to better match the version.
 
-0.6.0 - February 13th, 2009
+= 0.6.0 - February 13th, 2009 =
 
 * This minor fix removes some errors in the settings screen and fixes the headers already sent in some themes.
 
-0.5.0 - February 13th, 2009
+= 0.5.0 - February 13th, 2009 =
 
 * Early alpha release
 
 == Upgrade Notice ==
+
+= 1.6 =
+If you are using whitelist URLs you should update.
 
 = 1.5 =
 Not required, just some code cleanup and text changes.
