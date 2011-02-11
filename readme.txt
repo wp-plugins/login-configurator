@@ -1,5 +1,5 @@
 === Login Configurator ===
-Contributors: GrandSlambert
+Contributors: grandslambert
 Donate link: http://plugins.grandslambert.com/login-configurator-donate
 Tags: login, login redirect, customize login, login notes
 Requires at least: 2.5
