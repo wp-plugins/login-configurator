@@ -114,7 +114,7 @@ If you want to change the logo on your blog's login pages, you need this plugin.
 
 = Where can I get support? =
 
-http://support.grandslambert.com/forum/login-configurator
+http://grandslambert.tk/support/forum/login-configurator
 
 == Screenshots ==
 
