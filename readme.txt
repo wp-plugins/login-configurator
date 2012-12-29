@@ -1,10 +1,12 @@
 === Login Configurator ===
 Contributors: grandslambert
-Donate link: http://plugins.grandslambert.com/login-configurator-donate
+Donate link: http://grandslambert.tk/plugins/login-configurator.html
 Tags: login, login redirect, customize login, login notes
 Requires at least: 2.5
-Tested up to: 2.9
+Tested up to: 3.5
 Stable tag: trunk
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Add features to control how your login form works including where the user is redirected when they log in.
 
@@ -18,6 +20,7 @@ Features include:
 * Can also protect your feed URL.
 * Set a default redirect URL when they log in.
 * Add a message box with title to the login form.
+* Set the background image to use on the login form, and the repeat rule.
 * Set the URL for a new logo for all login pages.
 * Set the URL for the link on the logo for all login pages.
 * Whitelist certain URLs in the site to remain unprotected.
@@ -29,6 +32,13 @@ Features include:
 3. Configure the plugin on the Settings->Login Configurator screen.
 
 == Changelog ==
+
+= 2.0 - December 28th, 2012 =
+
+* Fixed a bug where the logo no longer was replaced.
+* Fixed the whitelist URL box so that the site url is ignored if included.
+* Fixed some links in the plugin to point to grandslambert.tk
+* Added the ability to change the background of the login page.
 
 = 1.6 - Feburary 11th, 2011 =
 

@@ -5,7 +5,7 @@
  * @package Login Configurator
  * @subpackage templates
  * @author GrandSlambert
- * @copyright 2009-2011
+ * @copyright 2009-2013
  * @access public
  * @since 1.6
 */
@@ -53,4 +53,9 @@ ul#login_configurator_tabs {
 
 #login_configurator_tabs li.login-configurator-selected a{
      color: #fff;
+}
+
+.form-table tr {
+     border-bottom: solid 1px #ddd;
+     padding: 5px;
 }
